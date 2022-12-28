@@ -1,0 +1,37 @@
+line(0,ymid,xmax,ymid);
+setcolor(15);
+c.drawc(x,y,r);
+pt p1;
+p1.setco(100,100);
+p1.setcolor(14);
+dline l;
+l.setline(x1+xmid, ymid-y1, x2+xmid, ymid-y2);
+cout<<"Enter Total Number of lines : ";
+cin>>n;
+for(i=0;i<n;i++)
+{
+cout<<"Enter co-ordinates of point x1 : ";
+cin>>x1;
+cout<<"enter coordinates of point y1 : ";
+cin>>y1;
+cout<<"Enter co-ordinates of point x2 : ";
+cin>>x2;
+cout<<"enter coordinates of point y2 : ";
+cin>>y2;
+l.setline(x1+xmid, ymid-y1, x2+xmid, ymid-y2);
+l.drawl(15);
+}
+cout<<"\nEnter coordinates of centre of circle : ";
+cout<<"\n Enter the value of x : ";
+cin>>x;
+cout<<"\nEnter the value of y : ";
+cin>>y;
+cout<<"\nEnter the value of radius : ";
+cin>>r;
+setcolor(5);
+c.drawc(x,y,r);
+getch();
+delay(200);
+closegraph();
+return 0;
+}
