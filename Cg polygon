@@ -1,0 +1,41 @@
+ {
+ x=((x2-x1)*(z-y1))/(y2-y1);
+ x=x+x1;
+ }
+ if(x<=xmax && x>=xmin)
+ inter[c++]=x;
+ }
+ }
+}
+void poly::sort(int z) // sorting
+{
+ int temp,j,i;
+ for(i=0;i<v;i++)
+ {
+ line(p[i].x,p[i].y,p[i+1].x,p[i+1].y);
+ }
+ delay(100);
+ for(i=0; i<c;i+=2)
+ {
+ delay(100);
+ line(inter[i],z,inter[i+1],z);
+ }
+}
+int main() //main
+{
+ int cl;
+ initwindow(500,600);
+ cleardevice();
+ poly x;
+ x.read();
+ x.calcs();
+ cleardevice();
+ cout<<"\n\tEnter The Color You Want :(In Range 0 To 15 )->"; //selecting color
+ cin>>cl;
+ setcolor(cl);
+ x.display();
+
+ closegraph(); //closing graph
+ getch();
+ return 0;
+}
