@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+class SelectionSort{
+ public:
+ template <typename type> 
+ int selectionSort(type tarr[5]){
+   int min;
+   float temp;
+   for(int i=0;i<5;i++){
+    min=i;
+    for(int j=i+1;j<5;j++){
+     if(tarr[min] > tarr[j]){
+      min=j;
+     }
+    }
+    temp = tarr[min];
+    tarr[min] = tarr[i];
+    tarr[i] = temp;
+   }
+   cout<<"\nSorted array: "<<endl;
+   for(int cnt=0; cnt<5; cnt++) 
+    cout<<tarr[cnt]<<endl;
+  }
+};
+
+int main(){
+ SelectionSort ob;
+ int intArr[5];
+ cout<<"\n Enter 5 elements of type integer: ";
+ for(int cnt=0; cnt<5; cnt++)
+  cin>>intArr[cnt];
+ cout<<"\nInteger Array entered by you: ";
+ for(int cnt=0; cnt<5; cnt++)
+  cout<<"\t"<<intArr[cnt];
+   
+ ob.selectionSort(intArr);
+
+ float floatArr[5];
+ cout<<"\n Enter 5 elements of type float: ";
+ for(int cnt=0; cnt<5; cnt++)
+  cin>>floatArr[cnt];
+ cout<<"\nfloat Array entered by you: ";
+ for(int cnt=0; cnt<5; cnt++)
+  cout<<"\t"<<floatArr[cnt];
+   
+ ob.selectionSort(floatArr);
+ return 0;
+}
