@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
-#include <algorithm> using namespace std;
+#include <algorithm> 
+using namespace std;
 struct Edge {
 int source;
 int destination;
